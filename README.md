@@ -1,6 +1,8 @@
 DZNEmptyDataSet
 =================
 
+[![Travis](https://travis-ci.org/dzenbot/DZNEmptyDataSet.svg?branch=master)](https://travis-ci.org/dzenbot/DZNEmptyDataSet.svg?branch=master)
+[![codecov](https://codecov.io/gh/dzenbot/DZNEmptyDataSet/badge.svg)](https://codecov.io/gh/dzenbot/DZNEmptyDataSet)
 [![Pod Version](http://img.shields.io/cocoapods/v/DZNEmptyDataSet.svg)](http://cocoadocs.org/docsets/DZNEmptyDataSet/)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
@@ -17,9 +19,9 @@ Most applications show lists of content (data sets), which many turn out to be e
 
 Please read this very interesting article about [*Designing For The Empty States*](http://tympanus.net/codrops/2013/01/09/designing-for-the-empty-states/).
 
-![Screenshots_Row1](https://raw.githubusercontent.com/dzenbot/UITableView-DataSet/master/Examples/Applications/Screenshots/Screenshots_row1.png)
-![Screenshots_Row2](https://raw.githubusercontent.com/dzenbot/UITableView-DataSet/master/Examples/Applications/Screenshots/Screenshots_row2.png)
-(*These are real life examples, available in the 'Applications' sample project*)
+![Screenshots_Row1](https://raw.githubusercontent.com/dzenbot/DZNEmptyDataSet/v2-swift/Examples/Applications/Screenshots/Screenshots_row1.png)
+![Screenshots_Row2](https://raw.githubusercontent.com/dzenbot/DZNEmptyDataSet/v2-swift/Examples/Applications/Screenshots/Screenshots_row2.png)
+(*These are real life examples, available in the 'Applications' sample project in the v2-Swift branch*)
 
 **[Empty Data Sets](http://pttrns.com/?did=1&scid=30)** are helpful for:
 * Avoiding white-screens and communicating to your users why the screen is empty.
@@ -59,6 +61,15 @@ To integrate DZNEmptyDataSet into your Xcode project using Carthage, specify it 
 github "dzenbot/DZNEmptyDataSet"
 ```
 
+To integrate DZNEmptyDataSet into your Xcode project using SPM, specify it in your `Package.swift`:
+
+```ruby
+.package(
+    url: "https://github.com/dzenbot/DZNEmptyDataSet",
+    .branch("master")
+)
+```
+For existing, go to "File Navigator" -> "Select Project" -> "Project Name" -> "Swift Packages" -> "+" -> Paste "https://github.com/dzenbot/DZNEmptyDataSet" and proceed to select your target.
 
 ## How to use
 For complete documentation, [visit CocoaPods' auto-generated doc](http://cocoadocs.org/docsets/DZNEmptyDataSet/)
@@ -69,7 +80,7 @@ For complete documentation, [visit CocoaPods' auto-generated doc](http://cocoado
 ```
 Unless you are importing as a framework, then do:
 ```objc
-#import "<DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 ```
 
 ### Protocol Conformance
