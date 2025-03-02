@@ -430,6 +430,9 @@ static char const * const kEmptyDataSetView =       "emptyDataSetView";
 - (void)reloadEmptyDataSet
 {
     [self dzn_reloadEmptyDataSet];
+    CGSize size = self.superview.frame.size;
+    DZNEmptyDataSetView *v = self.emptyDataSetView;
+    v.frame = CGRectMake(0,0,size.width,size.height);
 }
 
 
@@ -738,7 +741,8 @@ Class dzn_baseClassToSwizzleForTarget(id target)
     CGRect superviewBounds = self.superview.bounds;
     self.frame = CGRectMake(0.0, 0.0, CGRectGetWidth(superviewBounds), CGRectGetHeight(superviewBounds));
     
-    void(^fadeInBlock)(void) = ^{_contentView.alpha = 1.0;};
+    UIView *cntview = _contentView;
+    void(^fadeInBlock)(void) = ^{cntview.alpha = 1.0;};
     
     if (self.fadeInOnDisplay) {
         [UIView animateWithDuration:0.25
@@ -911,6 +915,8 @@ Class dzn_baseClassToSwizzleForTarget(id target)
     _customView = nil;
     
     [self removeAllConstraints];
+    CGSize size = self.superview.frame.size;
+    self.frame = CGRectMake(0,0,size.width,size.height);
 }
 
 
